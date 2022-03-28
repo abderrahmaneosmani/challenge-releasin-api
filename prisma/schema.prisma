@@ -9,10 +9,40 @@ datasource db {
   provider = "mysql"
   url      = env("DATABASE_URL")
 }
+
 model Product {
-  id       Int @id @default(autoincrement())
-  Name String
-  Created_at DateTime @default(now())
+  id          Int          @id @default(autoincrement())
+  Name        String
+  Created_at  DateTime     @default(now())
   productType Int
-  
+
+}
+
+model ProductType {
+  id         Int         @id @default(autoincrement())
+  Name       String
+  Created_at DateTime    @default(now())
+  Updated_at DateTime    @default(now())
+
+}
+
+model Attribute {
+  id              Int             @id @default(autoincrement())
+  Name            String
+  type            String
+  AttributeValue  Int
+
+}
+
+model AttributeValue {
+  id                 Int                @id @default(autoincrement())
+  Name               String
+  Boolean            Boolean
+  Date               DateTime
+
+}
+
+model AssignedAttribute {
+  id             Int             @id @default(autoincrement())
+  AttributeValue Int
 }
