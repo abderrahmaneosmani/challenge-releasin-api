@@ -14,6 +14,10 @@ export class ProductsTypesController {
   create(@Body() createProductsTypeDto: CreateProductsTypeDto) {
     return this.productsTypesService.create(createProductsTypeDto);
   }
+  @Get()
+  findAll() {
+    return this.productsTypesService.findAll();
+  }
 
   @Get(':id')
   findOne(@Param('id') id: string) {

@@ -26,6 +26,13 @@ export class ProductsTypesService {
     }
     return productType;
   }
+  async findAll(): Promise<ProductType[]> {
+    const productsTypes = await this.prisma.productType.findMany();
+    if (!productsTypes) {
+      throw new Error('Record not found');
+    }
+    return productsTypes;
+  }
 
   async update(
     id: number,
