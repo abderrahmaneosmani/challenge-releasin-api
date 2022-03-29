@@ -14,6 +14,10 @@ export class ProductsController {
   async create(@Body() createProductDto: CreateProductDto) {
     return await this.productsService.create(createProductDto);
   }
+  @Get()
+  async findAll() {
+    return await this.productsService.findAll();
+  }
 
   @Get(':id')
   async findOne(@Param('id') id: string) {

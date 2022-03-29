@@ -35,4 +35,11 @@ export class ProductsService {
     }
     return record;
   }
+  async findAll(): Promise<Product[]> {
+    const products = await this.prisma.product.findMany();
+    if (!products) {
+      throw new Error('Record not found');
+    }
+    return products;
+  }
 }
