@@ -5,7 +5,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 
 @Controller({
   path: 'products',
-  version: '1.0.0',
+  version: '1',
 })
 export class ProductsController {
   constructor(private readonly productsService: ProductsService) {}

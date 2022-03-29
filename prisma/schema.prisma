@@ -21,7 +21,7 @@ model Product {
 model ProductType {
   id         Int         @id @default(autoincrement())
   Name       String
-  Created_at DateTime    @default(now())
+  Created_at DateTime  @default(now())
   Updated_at DateTime    @default(now())
 
 }
