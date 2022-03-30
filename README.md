@@ -23,5 +23,17 @@ $ npm run start:dev
 # production mode
 $ npm run start:prod
 ```
+##PART 3
+## I suggest changing the table  Attribute value Like this
+
+```
+model AttributeValue {
+  id                 Int                @id @default(autoincrement())
+  Name               String
+  value             String
+  typeValue         String              
+
+}
+
 
 
